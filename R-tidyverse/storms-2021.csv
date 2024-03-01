@@ -1,0 +1,7 @@
+name,year,month,day,hour,lat,long,status,category,wind,pressure,tropicalstorm_force_diameter,hurricane_force_diameter
+Elsa,2021,6,30,18,9.4,-42.8,tropical depression,NA,30,1008,0,0
+Julian,2021,8,28,12,32.1,-51.7,other low,NA,25,1010,0,0
+Rose,2021,9,19,0,10.4,-27.4,tropical depression,NA,30,1008,0,0
+Sam,2021,9,22,18,10,-33.1,tropical depression,NA,30,1008,0,0
+Victor,2021,9,29,0,7,-22,other low,NA,30,1008,0,0
+Wanda,2021,10,25,18,32.5,-76.3,extratropical,NA,35,1006,60,0
