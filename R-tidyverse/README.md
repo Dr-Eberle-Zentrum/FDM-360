@@ -95,7 +95,14 @@ Die gängigsten Orte sind:
 -   URLs, also direkter Datenimport aus dem Internet oder lokalem
     Netzwerk
 
-Im Folgenden einige Beispiele zum Einlesen von Daten in R.
+Im Folgenden einige Beispiele zum Einlesen von Daten in R. Die lokalen
+Dateien müssen sich im *Arbeitsverzeichnis* befinden, das mit `getwd()`
+abgefragt und mit `setwd()` gesetzt werden kann (oder mit entsprechenden
+Menüeinträgen in RStudio). Um den folgenden Beispielcode mit lokalen
+Dateien auszuführen, müssen daher die Dateien
+[storms-2019-2021.csv](storms-2019-2021.csv) und
+[storms-2019-2021.xlsx](storms-2019-2021.xlsx) erst ins aktuelle
+Arbeitsverzeichnis gedownloaded werden.
 
     library(readr)
     # CSV aus dem Internet
