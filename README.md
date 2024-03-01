@@ -33,3 +33,6 @@ Selbstlernmaterialien zu konkreten Themen des Forschungsdatenmanagements finden 
   - Urheberrecht, Bildrecht, Lizenzen
 - Archiving
   - DOI-Registrierung
+
+# TODO Kapitel aus dem [Moodle FDM Kurs](https://moodlepro.zdv.uni-tuebingen.de/course/view.php?id=12) verlinken.
+

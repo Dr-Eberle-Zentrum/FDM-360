@@ -21,7 +21,7 @@ Folgende Installationen werden benötigt:
     -   `stringr` -
         [Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/strings.pdf)
     -   `tidyr` -
-        [Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-import.pdf)
+        [Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/tidyr.pdf)
     -   `ggplot2` -
         [Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-visualization-2.1.pdf)
 
@@ -150,6 +150,12 @@ Basistransformationen sind:
         aus dem Juni 2020
     -   `filter(storms, !is.na(category))` = alle Sturmdaten, bei denen
         die Kategorie bekannt ist
+-   Konkrete Zeilenauswahl (via Index oder Anzahl)
+    -   `slice(storms, 1:10)` = die ersten 10 Zeilen
+    -   `slice(storms, 1, 3, 5)` = die Zeilen 1, 3 und 5
+    -   `slice_tail(storms, n=10)` = die 10 letzten Zeilen
+    -   `slice_max(storms, pressure)` = die Zeile mit dem höchsten Wert
+        in der Spalte `pressure`
 -   Sortieren von Zeilen
     -   `arrange(storms, year)` = Sturmdaten nach Jahr aufsteigend
         sortieren
@@ -204,9 +210,38 @@ Basistransformationen sind:
         = es können auch mehrere Spalten auf einmal berechnet werden und
         dabei direkt neue angelegte Spalten in anschliessenden Formeln
         verwendet werden (hier Runden auf eine Nachkommastelle)
+-   (Teil)Tabellen “drehen” = pivotieren. Hiermit können Spalten in
+    Zeilen und umgekehrt umgeformt werden. Das ist am Anfang etwas
+    verwirrend, aber ungemein praktisch, um Daten in eine “tidy” Form zu
+    bringen (siehe oben), die für die weitere Verarbeitung besser
+    geeignet ist. Das Beispiel hierfür ist etwas länger, um für
+    Anschauungszwecke die Datentabelle erst etwas einzukürzen.
 
-Details und weitere Funktionen und Beispiele sind im [`dplyr`
-Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-transformation.pdf)
+<!-- -->
+
+    storms |> 
+      filter(name == "Arthur" & year == 2020) |> # seöect specific storm
+      select(name, year, month, day, wind, pressure) |> # reduce (for simplicity) to relevant columns
+      # distribute wind and pressure into separate rows with respective labels in a new column "measure"
+      pivot_longer(cols = c(wind, pressure), names_to = "measure", values_to = "value") |> 
+      slice_head(n=4) # show only first 4 rows
+
+    ## # A tibble: 4 × 6
+    ##   name    year month   day measure  value
+    ##   <chr>  <dbl> <dbl> <int> <chr>    <int>
+    ## 1 Arthur  2020     5    16 wind        30
+    ## 2 Arthur  2020     5    16 pressure  1008
+    ## 3 Arthur  2020     5    17 wind        35
+    ## 4 Arthur  2020     5    17 pressure  1006
+
+Details und weitere Funktionen und Beispiele sind im
+
+-   [`dplyr`
+    Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-transformation.pdf)
+    und
+-   [`tidyr`
+    Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/tidyr.pdf)
+
 zusammengefasst.
 
 ## Workflows mittels Piping
