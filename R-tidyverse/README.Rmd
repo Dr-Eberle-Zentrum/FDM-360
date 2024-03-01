@@ -259,4 +259,20 @@ Beachte:
 
 ## Daten visualisieren
 
+Die Visualisierung von Daten ist ein wichtiger Bestandteil der Datenanalyse, da sie es ermöglicht, Muster und Zusammenhänge in den Daten zu erkennen und zu kommunizieren.
+In R wird die Visualisierung von Daten mit dem `ggplot2` Paket durchgeführt, das auf der *Grammar of Graphics* basiert.
+
+
+```{r ggplot2-examples, eval=FALSE}
+# Beispiel: Anzahl der Stürme pro Jahr visualisieren
+ggplot(storms, aes(x = year)) + 
+  geom_bar() + 
+  labs(title = "Anzahl der Stürme pro Jahr", x = "Jahr", y = "Anzahl")
+```
+
+
+
+-----------------------------------------------
+
+Dieses Dokument wurde mit Unterstützung von GitHub Copilot erstellt, einem KI-gestützten Autocompletion-Tool, das auf der OpenAI GPT-3-Technologie basiert.
 

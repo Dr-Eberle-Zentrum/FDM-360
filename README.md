@@ -36,3 +36,7 @@ Selbstlernmaterialien zu konkreten Themen des Forschungsdatenmanagements finden 
 
 # TODO Kapitel aus dem [Moodle FDM Kurs](https://moodlepro.zdv.uni-tuebingen.de/course/view.php?id=12) verlinken.
 
+
+-----------------------------------------------
+
+Dieses Dokument wurde mit Unterstützung von GitHub Copilot erstellt, einem KI-gestützten Autocompletion-Tool, das auf der OpenAI GPT-3-Technologie basiert.

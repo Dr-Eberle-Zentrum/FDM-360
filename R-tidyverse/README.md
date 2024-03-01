@@ -151,7 +151,6 @@ Basistransformationen sind:
     -   `filter(storms, !is.na(category))` = alle Sturmdaten, bei denen
         die Kategorie bekannt ist
 -   Konkrete Zeilenauswahl (via Index oder Anzahl)
-    -   `slice(storms, 1:10)` = die ersten 10 Zeilen
     -   `slice(storms, 1, 3, 5)` = die Zeilen 1, 3 und 5
     -   `slice_tail(storms, n=10)` = die 10 letzten Zeilen
     -   `slice_max(storms, pressure)` = die Zeile mit dem höchsten Wert
@@ -367,3 +366,20 @@ Beachte:
     sogenanntes *coercion* in R)
 
 ## Daten visualisieren
+
+Die Visualisierung von Daten ist ein wichtiger Bestandteil der
+Datenanalyse, da sie es ermöglicht, Muster und Zusammenhänge in den
+Daten zu erkennen und zu kommunizieren. In R wird die Visualisierung von
+Daten mit dem `ggplot2` Paket durchgeführt, das auf der *Grammar of
+Graphics* basiert.
+
+    # Beispiel: Anzahl der Stürme pro Jahr visualisieren
+    ggplot(storms, aes(x = year)) + 
+      geom_bar() + 
+      labs(title = "Anzahl der Stürme pro Jahr", x = "Jahr", y = "Anzahl")
+
+------------------------------------------------------------------------
+
+Dieses Dokument wurde mit Unterstützung von GitHub Copilot erstellt,
+einem KI-gestützten Autocompletion-Tool, das auf der OpenAI
+GPT-3-Technologie basiert.
