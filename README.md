@@ -25,7 +25,7 @@ Selbstlernmaterialien zu konkreten Themen des Forschungsdatenmanagements finden 
   - Metadaten und Dokumentation
 - Analyzing & Processing
   - Datenaufbereitung mit OpenRefine
-  - Datenanalyse mit R (tidyverse)
+  - [Datenanalyse mit R (tidyverse)](R-tidyverse)
   - Datenanalyse mit Python (pandas)
   - Datenvisualisierung
 - Publishing
