@@ -4,7 +4,6 @@ author: "Martin Raden"
 date: "`r Sys.Date() |> format('%d.%m.%Y')`"
 output: 
   md_document :
-    toc: true
     variant: markdown_github
 ---
 
@@ -14,6 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 suppressPackageStartupMessages(library(tidyverse))
 # set working directory to the location of this file
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# get advanced table-of-content generation
+devtools::source_gist("c83e078bf8c81b035e32c3fc0cf04ee8",filename = 'render_toc.R')
 ```
 
 
@@ -22,6 +23,12 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 Im Folgenden werden einige Möglichkeiten eingeführt, wie Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen durchgeführt werden können.
 Hierbei werden grundlegende Kenntnisse von R vorausgesetzt.
 Das Ziel diese Tutorials ist es, R NutzerInnen ohne `tidyverse` Kenntnisse einen Einstieg und allen mit `tidyverse` Vertrauten eine Zusammenfassung zu geben.
+
+**Themenübersicht:**
+
+```{r toc, echo=FALSE} 
+render_toc("README.Rmd")
+```
 
 
 ## Voraussetzungen

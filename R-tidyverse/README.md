@@ -1,5 +1,16 @@
--   [FDM-360 - Datenanalyse mit R
-    (tidyverse)](#fdm-360---datenanalyse-mit-r-tidyverse)
+# [FDM-360](../) - Datenanalyse mit R (tidyverse)
+
+Im Folgenden werden einige Möglichkeiten eingeführt, wie
+Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen
+durchgeführt werden können. Hierbei werden grundlegende Kenntnisse von R
+vorausgesetzt. Das Ziel diese Tutorials ist es, R NutzerInnen ohne
+`tidyverse` Kenntnisse einen Einstieg und allen mit `tidyverse`
+Vertrauten eine Zusammenfassung zu geben.
+
+**Themenübersicht:**
+
+-   [FDM-360](../) - Datenanalyse mit R
+    (tidyverse)\](#fdm-360\](../)—datenanalyse-mit-r-(tidyverse))
     -   [Voraussetzungen](#voraussetzungen)
     -   [Literatur](#literatur)
     -   [Datenstrukturen](#datenstrukturen)
@@ -10,15 +21,6 @@
         verwenden](#textdaten-verändern-und-verwenden)
     -   [Daten zusammenführen](#daten-zusammenführen)
     -   [Daten visualisieren](#daten-visualisieren)
-
-# [FDM-360](../) - Datenanalyse mit R (tidyverse)
-
-Im Folgenden werden einige Möglichkeiten eingeführt, wie
-Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen
-durchgeführt werden können. Hierbei werden grundlegende Kenntnisse von R
-vorausgesetzt. Das Ziel diese Tutorials ist es, R NutzerInnen ohne
-`tidyverse` Kenntnisse einen Einstieg und allen mit `tidyverse`
-Vertrauten eine Zusammenfassung zu geben.
 
 ## Voraussetzungen
 
