@@ -243,11 +243,11 @@ Basistransformationen sind:
 
 ``` r
 storms |> 
-  filter(name == "Arthur" & year == 2020) |> # seöect specific storm
-  select(name, year, month, day, wind, pressure) |> # reduce (for simplicity) to relevant columns
-  # distribute wind and pressure into separate rows with respective labels in a new column "measure"
+  filter(name == "Arthur" & year == 2020) |> # speziellen Sturm auswählen
+  select(name, year, month, day, wind, pressure) |> # (zur Vereinfachung) nur spezifische Spalten
+  # Verteile Wind und Druck in separate Zeilen mit entsprechenden Labels in einer neuen Spalte "measure"
   pivot_longer(cols = c(wind, pressure), names_to = "measure", values_to = "value") |> 
-  slice_head(n=4) # show only first 4 rows
+  slice_head(n=4) # nur die ersten 4 Zeilen anzeigen
 ```
 
     ## # A tibble: 4 × 6
