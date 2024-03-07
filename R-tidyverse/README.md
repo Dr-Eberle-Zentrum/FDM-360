@@ -9,18 +9,16 @@ Vertrauten eine Zusammenfassung zu geben.
 
 **Themenübersicht:**
 
--   [FDM-360](../) - Datenanalyse mit R
-    (tidyverse)\](#fdm-360\](../)—datenanalyse-mit-r-(tidyverse))
-    -   [Voraussetzungen](#voraussetzungen)
-    -   [Literatur](#literatur)
-    -   [Datenstrukturen](#datenstrukturen)
-    -   [Dateiverarbeitung](#dateiverarbeitung)
-    -   [Tabellen transformieren](#tabellen-transformieren)
-    -   [Workflows mittels Piping](#workflows-mittels-piping)
-    -   [Textdaten verändern und
-        verwenden](#textdaten-verändern-und-verwenden)
-    -   [Daten zusammenführen](#daten-zusammenführen)
-    -   [Daten visualisieren](#daten-visualisieren)
+-   [Voraussetzungen](#voraussetzungen)
+-   [Literatur](#literatur)
+-   [Datenstrukturen](#datenstrukturen)
+-   [Dateiverarbeitung](#dateiverarbeitung)
+-   [Tabellen transformieren](#tabellen-transformieren)
+-   [Workflows mittels Piping](#workflows-mittels-piping)
+-   [Textdaten verändern und
+    verwenden](#textdaten-verändern-und-verwenden)
+-   [Daten zusammenführen](#daten-zusammenführen)
+-   [Daten visualisieren](#daten-visualisieren)
 
 ## Voraussetzungen
 

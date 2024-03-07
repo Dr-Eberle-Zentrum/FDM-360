@@ -18,7 +18,8 @@ devtools::source_gist("c83e078bf8c81b035e32c3fc0cf04ee8",filename = 'render_toc.
 ```
 
 
-# [FDM-360](../) - Datenanalyse mit R (tidyverse)
+[FDM-360](../) - Datenanalyse mit R (tidyverse)
+====================================================
 
 Im Folgenden werden einige Möglichkeiten eingeführt, wie Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen durchgeführt werden können.
 Hierbei werden grundlegende Kenntnisse von R vorausgesetzt.
