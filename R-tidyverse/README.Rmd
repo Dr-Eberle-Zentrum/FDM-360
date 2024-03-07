@@ -3,7 +3,7 @@ title: "Datenanalyse mit R und tidyverse"
 author: "Martin Raden"
 date: "`r Sys.Date() |> format('%d.%m.%Y')`"
 output: 
-  html_document :
+  md_document :
     toc: true
 ---
 
