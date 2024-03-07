@@ -1,5 +1,5 @@
 ---
-title: "Datenanalyse mit R und tidyverse"
+title: "Datenanalyse mit R (tidyverse)"
 author: "Martin Raden"
 date: "`r Sys.Date() |> format('%d.%m.%Y')`"
 output: 
@@ -17,7 +17,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
 
-# [FDM-360](../) - Datenanalyse mit R und tidyverse
+# [FDM-360](../) - Datenanalyse mit R (tidyverse)
 
 Im Folgenden werden einige Möglichkeiten eingeführt, wie Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen durchgeführt werden können.
 Hierbei werden grundlegende Kenntnisse von R vorausgesetzt.

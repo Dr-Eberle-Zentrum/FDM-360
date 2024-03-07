@@ -1,5 +1,5 @@
--   [FDM-360 - Datenanalyse mit R und
-    tidyverse](#fdm-360---datenanalyse-mit-r-und-tidyverse)
+-   [FDM-360 - Datenanalyse mit R
+    (tidyverse)](#fdm-360---datenanalyse-mit-r-tidyverse)
     -   [Voraussetzungen](#voraussetzungen)
     -   [Literatur](#literatur)
     -   [Datenstrukturen](#datenstrukturen)
@@ -11,7 +11,7 @@
     -   [Daten zusammenführen](#daten-zusammenführen)
     -   [Daten visualisieren](#daten-visualisieren)
 
-# [FDM-360](../) - Datenanalyse mit R und tidyverse
+# [FDM-360](../) - Datenanalyse mit R (tidyverse)
 
 Im Folgenden werden einige Möglichkeiten eingeführt, wie
 Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen
