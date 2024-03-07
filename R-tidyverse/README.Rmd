@@ -2,7 +2,9 @@
 title: "Datenanalyse mit R und tidyverse"
 author: "Martin Raden"
 date: "`r Sys.Date() |> format('%d.%m.%Y')`"
-output: md_document
+output: 
+  html_document :
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
@@ -14,14 +16,12 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
 
-# Datenanalyse mit R und tidyverse
+# [FDM-360](../) - Datenanalyse mit R und tidyverse
 
 Im Folgenden werden einige Möglichkeiten eingeführt, wie Datenanalyse und -visualisierung mit R und dem tidyverse durchgeführt werden können.
 Hierbei werden grundlegende Kenntnisse von R vorausgesetzt.
 Das Ziel diese Tutorials ist es, R NutzerInnen ohne tidyverse Kenntnisse einen Einstieg und allen mit tidyverse vertrauten eine Zusammenfassung zu geben.
 
-* Themenübersicht
-{:toc}
 
 ## Voraussetzungen
 
@@ -66,7 +66,7 @@ Wenn das der Fall ist, sprich
 
 wird der Datensatz als "tidy" bezeichnet.
 
-## Tabellendaten von Dateien einlesen und in Dateien schreiben/exportieren
+## Dateiverarbeitung
 
 In R können Daten aus verschiedenen Quellen und von verschiedenen Orten eingelesen werden.
 
@@ -81,8 +81,8 @@ Die gängigsten Orte sind:
 - lokale Dateien
 - URLs, also direkter Datenimport aus dem Internet oder lokalem Netzwerk
 
-Im Folgenden einige Beispiele zum Einlesen von Daten in R. 
-Die lokalen Dateien müssen sich im *Arbeitsverzeichnis* befinden, das mit `getwd()` abgefragt und mit `setwd()` gesetzt werden kann (oder mit entsprechenden Menüeinträgen in RStudio).
+Im Folgenden einige Beispiele zum Einlesen von Daten aus Dateien in R. 
+Die lokalen Dateien müssen sich im *Arbeitsverzeichnis* befinden, das mit `getwd()` abgefragt und mit `setwd()` gesetzt werden kann (oder mit entsprechenden Menüeinträgen in RStudio), oder mit vollem Verzeichnisinformationen angegeben werden (nicht gezeigt und nicht empfohlen).
 Um den folgenden Beispielcode mit lokalen Dateien auszuführen, müssen daher die Dateien [storms-2019-2021.csv](storms-2019-2021.csv) und [storms-2019-2021.xlsx](storms-2019-2021.xlsx) erst ins aktuelle Arbeitsverzeichnis gedownloaded werden.
 
 
