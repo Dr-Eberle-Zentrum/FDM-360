@@ -13,12 +13,12 @@
 
 # [FDM-360](../) - Datenanalyse mit R und tidyverse
 
-Im Folgenden werden einige Möglichkeiten eingeführt, wie Datenanalyse
-und -visualisierung mit R und dem tidyverse durchgeführt werden können.
-Hierbei werden grundlegende Kenntnisse von R vorausgesetzt. Das Ziel
-diese Tutorials ist es, R NutzerInnen ohne tidyverse Kenntnisse einen
-Einstieg und allen mit tidyverse vertrauten eine Zusammenfassung zu
-geben.
+Im Folgenden werden einige Möglichkeiten eingeführt, wie
+Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen
+durchgeführt werden können. Hierbei werden grundlegende Kenntnisse von R
+vorausgesetzt. Das Ziel diese Tutorials ist es, R NutzerInnen ohne
+`tidyverse` Kenntnisse einen Einstieg und allen mit `tidyverse`
+Vertrauten eine Zusammenfassung zu geben.
 
 ## Voraussetzungen
 
@@ -65,7 +65,9 @@ Daten in der gleichen Spalte den gleichen Datentyp, z.B. “Zahl”
 `storms`](https://dplyr.tidyverse.org/reference/storms.html) aus dem
 `dplyr` package gezeigt.
 
-    dplyr::storms
+``` r
+dplyr::storms
+```
 
     ## # A tibble: 19,066 × 13
     ##    name   year month   day  hour   lat  long status      category  wind pressure
@@ -124,28 +126,30 @@ auszuführen, müssen daher die Dateien
 [storms-2019-2021.xlsx](storms-2019-2021.xlsx) erst ins aktuelle
 Arbeitsverzeichnis gedownloaded werden.
 
-    library(readr)
-    # CSV aus dem Internet
-    read_csv("https://raw.githubusercontent.com/tidyverse/dplyr/master/data-raw/storms.csv")
+``` r
+library(readr)
+# CSV aus dem Internet
+read_csv("https://raw.githubusercontent.com/tidyverse/dplyr/master/data-raw/storms.csv")
 
-    # lokale Excel-Datei
-    readxl::read_xlsx("storms-2019-2021.xlsx", 
-                      sheet = "storms-2020") # explizite Angabe des Tabellenblatts
+# lokale Excel-Datei
+readxl::read_xlsx("storms-2019-2021.xlsx", 
+                  sheet = "storms-2020") # explizite Angabe des Tabellenblatts
 
-    # lokale CSV Datei Semikolon getrennt (";") und mit westeuropäischem Zahlenformat ("," als Dezimaltrenner)
-    read_csv2("storms-2019-2021.csv")
+# lokale CSV Datei Semikolon getrennt (";") und mit westeuropäischem Zahlenformat ("," als Dezimaltrenner)
+read_csv2("storms-2019-2021.csv")
 
-    # explizites Einstellen des Daten- und Dateiformats
-    # (hier analog zu den Standardeinstellungen von `read_csv2()`)
-    read_delim(
-      "storms-2019-2021.csv", # Dateiname
-      delim = ";", # Spaltentrenner der Datei
-      locale = locale( # zusätzliche Einstellungen wie gespeicherte Informationen kodiert sind
-        decimal_mark = ",", # Dezimaltrenner
-        grouping_mark = ".", # Tausendertrenner
-        encoding = "latin1" # (alte) westeuropäisches Buchstabenkodierung (z.B. Umlaute)
-        )
-      )
+# explizites Einstellen des Daten- und Dateiformats
+# (hier analog zu den Standardeinstellungen von `read_csv2()`)
+read_delim(
+  "storms-2019-2021.csv", # Dateiname
+  delim = ";", # Spaltentrenner der Datei
+  locale = locale( # zusätzliche Einstellungen wie gespeicherte Informationen kodiert sind
+    decimal_mark = ",", # Dezimaltrenner
+    grouping_mark = ".", # Tausendertrenner
+    encoding = "latin1" # (alte) westeuropäisches Buchstabenkodierung (z.B. Umlaute)
+    )
+  )
+```
 
 Das Schreiben von Dateien erfolgt analog, indem einfach `write_`
 anstelle von `read_` verwendet wird.
@@ -237,14 +241,14 @@ Basistransformationen sind:
     geeignet ist. Das Beispiel hierfür ist etwas länger, um für
     Anschauungszwecke die Datentabelle erst etwas einzukürzen.
 
-<!-- -->
-
-    storms |> 
-      filter(name == "Arthur" & year == 2020) |> # seöect specific storm
-      select(name, year, month, day, wind, pressure) |> # reduce (for simplicity) to relevant columns
-      # distribute wind and pressure into separate rows with respective labels in a new column "measure"
-      pivot_longer(cols = c(wind, pressure), names_to = "measure", values_to = "value") |> 
-      slice_head(n=4) # show only first 4 rows
+``` r
+storms |> 
+  filter(name == "Arthur" & year == 2020) |> # seöect specific storm
+  select(name, year, month, day, wind, pressure) |> # reduce (for simplicity) to relevant columns
+  # distribute wind and pressure into separate rows with respective labels in a new column "measure"
+  pivot_longer(cols = c(wind, pressure), names_to = "measure", values_to = "value") |> 
+  slice_head(n=4) # show only first 4 rows
+```
 
     ## # A tibble: 4 × 6
     ##   name    year month   day measure  value
@@ -283,21 +287,23 @@ verschachteln.
 
 Zum Beispiel:
 
-    # Beispiel: maximale Windgeschwindigkeit pro Monat im Jahr 2020
+``` r
+# Beispiel: maximale Windgeschwindigkeit pro Monat im Jahr 2020
 
-    # geschachtelte Schreibweise = schwer lesbar, da von "innen nach aussen" gelesen werden muss
-    summarize( group_by( filter(storms, year == 2020), month), max_wind = max(wind))
+# geschachtelte Schreibweise = schwer lesbar, da von "innen nach aussen" gelesen werden muss
+summarize( group_by( filter(storms, year == 2020), month), max_wind = max(wind))
 
-    # mit temporären Variablen (die i.d.R. nicht wieder verwendet werden...!)
-    storms_2020 <- filter(storms, year == 2020)
-    storms_2020_monthly <- group_by(storms_2020, month)
-    summarize(storms_2020_monthly, max_wind = max(wind))
+# mit temporären Variablen (die i.d.R. nicht wieder verwendet werden...!)
+storms_2020 <- filter(storms, year == 2020)
+storms_2020_monthly <- group_by(storms_2020, month)
+summarize(storms_2020_monthly, max_wind = max(wind))
 
-    # Workflow mit Pipe-Operator = einfach lesbar und erweiterbar  *thumbs-up*
-    storms |> # Datensatz
-      filter(year == 2020) |> # Zeilenauswahl
-      group_by(month) |> # Gruppierung
-      summarize(max_wind = max(wind)) # Zusammenfassung
+# Workflow mit Pipe-Operator = einfach lesbar und erweiterbar  *thumbs-up*
+storms |> # Datensatz
+  filter(year == 2020) |> # Zeilenauswahl
+  group_by(month) |> # Gruppierung
+  summarize(max_wind = max(wind)) # Zusammenfassung
+```
 
 Pipe-basierte workflows sind …
 
@@ -364,16 +370,18 @@ zusammengefasst.
 
 Beispiele für deren Verwendung mit `mutate()` und Co. sind:
 
-    # Beispiel: Grossbuchstaben in Spalte "name" in Kleinbuchstaben umwandeln 
-    # (und nur eindeutige Einträge in Spalte "name" anzeigen)
-    mutate(storms, name = str_to_lower(name)) |> distinct(name)
-    # Beispiel: Jahrhundert aus Spalte "year" extrahieren
-    mutate(storms, century = str_sub(year, 1, 2)) |> distinct(name, century)
-     # oder via regulärem Ausdruck
-    mutate(storms, century = str_extract(year, "^\\d{2}"))
-    mutate(storms, century = str_remove(year, "..$"))
-    # Beispiel: Nur Stürme mit "storm" im Status behalten
-    filter(storms, str_detect(status, "storm")) |> distinct(name)
+``` r
+# Beispiel: Grossbuchstaben in Spalte "name" in Kleinbuchstaben umwandeln 
+# (und nur eindeutige Einträge in Spalte "name" anzeigen)
+mutate(storms, name = str_to_lower(name)) |> distinct(name)
+# Beispiel: Jahrhundert aus Spalte "year" extrahieren
+mutate(storms, century = str_sub(year, 1, 2)) |> distinct(name, century)
+ # oder via regulärem Ausdruck
+mutate(storms, century = str_extract(year, "^\\d{2}"))
+mutate(storms, century = str_remove(year, "..$"))
+# Beispiel: Nur Stürme mit "storm" im Status behalten
+filter(storms, str_detect(status, "storm")) |> distinct(name)
+```
 
 Beachte:
 
@@ -393,31 +401,33 @@ werden müssen, um die Daten zu analysieren. Zum Beispiel können Daten in
 einer Tabelle die Anzahl der Sturmtage pro Jahr enthalten und in einer
 anderen Tabelle die Kosten für Sturmschäden pro Jahr.
 
-    # Datensatz mit Sturmschäden pro Jahr (zufällige Werte) für 2015-2024
-    costs <- 
-      tibble(year = 2015:2024, # Jahresbereich festlegen
-             costs = runif(length(year), 1e6, 1e8)) # Zufallsdaten gleichverteilt erzeugen
+``` r
+# Datensatz mit Sturmschäden pro Jahr (zufällige Werte) für 2015-2024
+costs <- 
+  tibble(year = 2015:2024, # Jahresbereich festlegen
+         costs = runif(length(year), 1e6, 1e8)) # Zufallsdaten gleichverteilt erzeugen
 
-    # Anzahl der Sturmtage pro Jahr
-    stormyDays <- 
-      storms |>
-      # Datensatz in Einzeljahre aufteilen
-      group_by(year) |>
-      # nur eine Zeile pro Monat/Jahr Kombination (pro Jahr) behalten
-      distinct(month, day) |>
-      # zählen, wie viele Zeilen pro Jahr noch vorhanden sind
-      count() |> 
-      ungroup()
-      
+# Anzahl der Sturmtage pro Jahr
+stormyDays <- 
+  storms |>
+  # Datensatz in Einzeljahre aufteilen
+  group_by(year) |>
+  # nur eine Zeile pro Monat/Jahr Kombination (pro Jahr) behalten
+  distinct(month, day) |>
+  # zählen, wie viele Zeilen pro Jahr noch vorhanden sind
+  count() |> 
+  ungroup()
+  
 
-    # Beispiel (1): Sturmtaginformation (links) mit Kosteninformation (rechts) ergänzen
-    # BEACHTE: für Jahre ohne Eintrag in `costs` wird `NA` eingetragen !
-    left_join(stormyDays, costs, by = "year") |> 
-      # nur die ersten und letzten 3 Zeilen anzeigen
-      slice( c(1:3, (n()-2):n()) )
+# Beispiel (1): Sturmtaginformation (links) mit Kosteninformation (rechts) ergänzen
+# BEACHTE: für Jahre ohne Eintrag in `costs` wird `NA` eingetragen !
+left_join(stormyDays, costs, by = "year") |> 
+  # nur die ersten und letzten 3 Zeilen anzeigen
+  slice( c(1:3, (n()-2):n()) )
 
-    # Beispiel (2): nur Datensätze für die beides, d.h. Sturmtage als auch Kosten, vorhanden ist
-    inner_join(stormyDays, costs, by = "year")
+# Beispiel (2): nur Datensätze für die beides, d.h. Sturmtage als auch Kosten, vorhanden ist
+inner_join(stormyDays, costs, by = "year")
+```
 
 ## Daten visualisieren
 
@@ -432,49 +442,53 @@ Form) unterteilt. Die Verküpfung von Tabellenspalten mit den Ebenen und
 Schichten (d.h. Welche Information wird wie fürs Plotting verwendet)
 erfolgt über die `aes()` Funktion.
 
-    # Beispiel: Anzahl der Stürme pro Jahr visualisieren
+``` r
+# Beispiel: Anzahl der Stürme pro Jahr visualisieren
 
-    # Rohdatensatz startet Visualisierungsworkflow
-    storms |> 
-      
-      ########### Datenvorbereitung #############
+# Rohdatensatz startet Visualisierungsworkflow
+storms |> 
+  
+  ########### Datenvorbereitung #############
 
-      # auf einen Eintrag (Zeile) pro Sturm und Jahr reduzieren
-      distinct(year, name) |> 
-      # Anzahl der Stürme pro Jahr zählen
-      group_by(year) |>
-      count() |> 
-      ungroup() |> 
+  # auf einen Eintrag (Zeile) pro Sturm und Jahr reduzieren
+  distinct(year, name) |> 
+  # Anzahl der Stürme pro Jahr zählen
+  group_by(year) |>
+  count() |> 
+  ungroup() |> 
 
-      ########### Datenvisualisierung #############
-      
-      # ggplot-Objekt erstellen (Daten via pipe übergeben)
-      ggplot(aes(x = year, y=n)) + # Verknüpfung von Datenspalten (year, n) und Achsen (x,y)
-      # Diagrammtitel und Achsenbeschriftung
-      labs(title = "Anzahl der Stürme pro Jahr", x = "Jahr", y = "Anzahl") +
-      # grundlegende Diagrammformatierung (Hintergrundfarben, Schriftarten, ...)
-      theme_minimal() +
-      # Balkendiagramm mit Anzahl der Stürme pro Jahr
-      geom_bar(fill="skyblue3", stat = "identity") +
-      # Highlighting der Jahre mit mehr als 20 Stürmen
-      geom_vline(data = ~ filter(.x, n>20),  # Datensatz einschränken 
-                # (hier `.x` = Platzhalter für Daten aus vorheriger Ebene, d.h. `storms`)
-                aes(xintercept=year), # welche (Teil)Tabellendaten für Position zu verwenden
-                color="red", fill=NA, stat = "identity") + # Zusätzliche Formatierung
-      # Jahreszahlen der Jahre mit mehr als 20 Stürmen in schräger Textausrichtung
-      geom_text(data = ~ filter(.x, n>20), # Datensatz einschränken
-                aes(label=year, x=year, y=max(n)), # Daten und Positionen festlegen
-                angle=70, vjust=0.5, hjust=-0.6, size=3, color="red") + # Textformatierung
-      # disable clipping um Jahreszahltexte außerhalb des Diagrammbereichs anzuzeigen
-      coord_cartesian(clip = "off")
+  ########### Datenvisualisierung #############
+  
+  # ggplot-Objekt erstellen (Daten via pipe übergeben)
+  ggplot(aes(x = year, y=n)) + # Verknüpfung von Datenspalten (year, n) und Achsen (x,y)
+  # Diagrammtitel und Achsenbeschriftung
+  labs(title = "Anzahl der Stürme pro Jahr", x = "Jahr", y = "Anzahl") +
+  # grundlegende Diagrammformatierung (Hintergrundfarben, Schriftarten, ...)
+  theme_minimal() +
+  # Balkendiagramm mit Anzahl der Stürme pro Jahr
+  geom_bar(fill="skyblue3", stat = "identity") +
+  # Highlighting der Jahre mit mehr als 20 Stürmen
+  geom_vline(data = ~ filter(.x, n>20),  # Datensatz einschränken 
+            # (hier `.x` = Platzhalter für Daten aus vorheriger Ebene, d.h. `storms`)
+            aes(xintercept=year), # welche (Teil)Tabellendaten für Position zu verwenden
+            color="red", fill=NA, stat = "identity") + # Zusätzliche Formatierung
+  # Jahreszahlen der Jahre mit mehr als 20 Stürmen in schräger Textausrichtung
+  geom_text(data = ~ filter(.x, n>20), # Datensatz einschränken
+            aes(label=year, x=year, y=max(n)), # Daten und Positionen festlegen
+            angle=70, vjust=0.5, hjust=-0.6, size=3, color="red") + # Textformatierung
+  # disable clipping um Jahreszahltexte außerhalb des Diagrammbereichs anzuzeigen
+  coord_cartesian(clip = "off")
+```
 
     ## Warning in geom_vline(data = ~filter(.x, n > 20), aes(xintercept = year), :
     ## Ignoring unknown parameters: `fill` and `stat`
 
-![](README_files/figure-markdown_strict/ggplot2-examples-1.png)
+![](README_files/figure-markdown_github/ggplot2-examples-1.png)
 
-    # optional: (zuletzt gemaltes) Diagramm speichern
-    # ggsave("storms_per_year.png", width=10, height=5, dpi=300)
+``` r
+# optional: (zuletzt gemaltes) Diagramm speichern
+# ggsave("storms_per_year.png", width=10, height=5, dpi=300)
+```
 
 ------------------------------------------------------------------------
 

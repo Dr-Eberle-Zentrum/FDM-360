@@ -5,6 +5,7 @@ date: "`r Sys.Date() |> format('%d.%m.%Y')`"
 output: 
   md_document :
     toc: true
+    variant: markdown_github
 ---
 
 ```{r setup, include=FALSE}
@@ -18,9 +19,9 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # [FDM-360](../) - Datenanalyse mit R und tidyverse
 
-Im Folgenden werden einige Möglichkeiten eingeführt, wie Datenanalyse und -visualisierung mit R und dem tidyverse durchgeführt werden können.
+Im Folgenden werden einige Möglichkeiten eingeführt, wie Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen durchgeführt werden können.
 Hierbei werden grundlegende Kenntnisse von R vorausgesetzt.
-Das Ziel diese Tutorials ist es, R NutzerInnen ohne tidyverse Kenntnisse einen Einstieg und allen mit tidyverse vertrauten eine Zusammenfassung zu geben.
+Das Ziel diese Tutorials ist es, R NutzerInnen ohne `tidyverse` Kenntnisse einen Einstieg und allen mit `tidyverse` Vertrauten eine Zusammenfassung zu geben.
 
 
 ## Voraussetzungen
