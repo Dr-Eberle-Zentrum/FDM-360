@@ -1,5 +1,7 @@
 # [FDM-360](../) - Datenanalyse mit R (tidyverse)
 
+Autor: [Martin Raden](https://github.com/martin-raden) - `r format(Sys.Date(), "%Y")`
+
 Im Folgenden werden einige Möglichkeiten eingeführt, wie
 Datenverarbeitung und -visualisierung mit R und dem `tidyverse` Paketen
 durchgeführt werden können. Hierbei werden grundlegende Kenntnisse von R
@@ -405,7 +407,7 @@ Beachte:
 
 ## Daten zusammenführen
 
-Oftmals liegen daten in mehreren Tabellen vor, die zusammengeführt
+Oftmals liegen Daten in mehreren Tabellen vor, die zusammengeführt
 werden müssen, um die Daten zu analysieren. Zum Beispiel können Daten in
 einer Tabelle die Anzahl der Sturmtage pro Jahr enthalten und in einer
 anderen Tabelle die Kosten für Sturmschäden pro Jahr.
