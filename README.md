@@ -9,7 +9,7 @@ Der Kurs richtet sich an alle, die in datenbasierten Projekten arbeiten, unabhä
 
 Die wichtigsten Schritte im Lebenszyklus von Forschungsdaten sind in folgender Grafik der Informationsseite ["Was ist Forschungsdatenmanagement (FDM)?"](https://uni-tuebingen.de/de/240762) der Universität Tübingen zusammengefasst.
 
-![](https://uni-tuebingen.de/fileadmin/_processed_/6/b/csm_FDM_Lebenszyklus_d1353825c4.png | width=400)
+![](https://uni-tuebingen.de/fileadmin/_processed_/6/b/csm_FDM_Lebenszyklus_d1353825c4.png)
 
 
 Selbstlernmaterialien zu konkreten Themen des Forschungsdatenmanagements finden Sie im Folgenden den einzelnen Schritten des Forschungsdatenlebenszyklus zugeordnet.

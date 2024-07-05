@@ -33,10 +33,10 @@ dann wie folgt aussieht.
 
 <figure>
 <img
-src="https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png%20%7C%20width=300"
-alt="(Binärdaten in Texteditor geöffnet)" />
-<figcaption aria-hidden="true">(Binärdaten in Texteditor
-geöffnet)</figcaption>
+src="https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png"
+alt="" />
+<figcaption
+aria-hidden="true"><img src="https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png" width=300 title="Binärdatei in Texteditor geöffnet"></figcaption>
 </figure>
 
 > Über die Gründe wird ausführlich in [diesem
@@ -49,12 +49,7 @@ einfach und bietet nur sehr begrenzte Funktionen. Wir empfehlen derzeit
 (Stand 2024) [unter Microsoft Windows den kostenlosen Texteditor
 Notepad++](https://notepad-plus-plus.org/).
 
-<figure>
-<img
-src="https://notepad-plus-plus.org/assets/images/notepad4ever.png%20%7C%20width%20=%20300"
-alt="(Notepad++ Screenshot)" />
-<figcaption aria-hidden="true">(Notepad++ Screenshot)</figcaption>
-</figure>
+[<img src="https://notepad-plus-plus.org/assets/images/notepad4ever.png" width="300" title="Notepad++ Screenshot">](https://notepad-plus-plus.org/assets/images/notepad4ever.png)
 
 Unter macOS ist der “TextEdit” ein einfacher Texteditor, der mit dem
 Betriebssystem geliefert wird.
