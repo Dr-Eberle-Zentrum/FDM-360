@@ -25,7 +25,7 @@ Grundlegend können sie *jede* Datei mit einem Texteditor öffnen.
 In der Regel wird der Texteditor die Datei als Textdatei interpretieren und den Inhalt (also die Binärinformation) als Text anzeigen.
 Wenn das Dateiformat jedoch spezielle Strukturen oder Codierungen enthält, kann der Texteditor den Inhalt nicht korrekt interpretieren und anzeigen, was dann wie folgt aussieht.
 
-![Binärdaten in Texteditor geöffnet](https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png)
+![(Binärdaten in Texteditor geöffnet)](https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png | width=300)
 
 > Über die Gründe wird ausführlich in [diesem Artikel](https://www.nayuki.io/page/what-are-binary-and-text-files) diskutiert.
 
@@ -34,7 +34,7 @@ Unter Microsoft Windows ist der "Editor" ein einfacher Texteditor, der mit dem B
 Allerdings ist der Editor sehr einfach und bietet nur sehr begrenzte Funktionen.
 Wir empfehlen derzeit (Stand 2024) [unter Microsoft Windows den kostenlosen Texteditor Notepad++](https://notepad-plus-plus.org/).
 
-![Notepad++ Screenshot (de.wikipedia.org)](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Notepad-plus-plus-7-5-1.png/240px-Notepad-plus-plus-7-5-1.png)
+![(Notepad++ Screenshot)](https://notepad-plus-plus.org/assets/images/notepad4ever.png | width = 300)
 
 Unter macOS ist der "TextEdit" ein einfacher Texteditor, der mit dem Betriebssystem geliefert wird.
 
@@ -52,9 +52,9 @@ Handelt es sich bei der Datei um ein textbasiertes oder binäres Dateiformat?
 
 <details>
   <summary>Lösung</summary>
-  `.md` ist die Dateiendung für Markdown-Dateien, die ein textbasiertes Dateiformat sind.
-  Die Datei `README.md` kann in einem Texteditor geöffnet und bearbeitet werden.
-  Details zur Markdown-Syntax werden später weiter unten diskutiert.
+  > `.md` ist die Dateiendung für Markdown-Dateien, die ein textbasiertes Dateiformat sind.
+  > Die Datei `README.md` kann in einem Texteditor geöffnet und bearbeitet werden.
+  > Details zur Markdown-Syntax werden später weiter unten diskutiert.
 </details>
 
 

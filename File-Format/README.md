@@ -33,10 +33,10 @@ dann wie folgt aussieht.
 
 <figure>
 <img
-src="https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png"
-alt="Binärdaten in Texteditor geöffnet" />
-<figcaption aria-hidden="true">Binärdaten in Texteditor
-geöffnet</figcaption>
+src="https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png%20%7C%20width=300"
+alt="(Binärdaten in Texteditor geöffnet)" />
+<figcaption aria-hidden="true">(Binärdaten in Texteditor
+geöffnet)</figcaption>
 </figure>
 
 > Über die Gründe wird ausführlich in [diesem
@@ -51,10 +51,9 @@ Notepad++](https://notepad-plus-plus.org/).
 
 <figure>
 <img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Notepad-plus-plus-7-5-1.png/240px-Notepad-plus-plus-7-5-1.png"
-alt="Notepad++ Screenshot (de.wikipedia.org)" />
-<figcaption aria-hidden="true">Notepad++ Screenshot
-(de.wikipedia.org)</figcaption>
+src="https://notepad-plus-plus.org/assets/images/notepad4ever.png%20%7C%20width%20=%20300"
+alt="(Notepad++ Screenshot)" />
+<figcaption aria-hidden="true">(Notepad++ Screenshot)</figcaption>
 </figure>
 
 Unter macOS ist der “TextEdit” ein einfacher Texteditor, der mit dem
@@ -80,10 +79,12 @@ es sich bei der Datei um ein textbasiertes oder binäres Dateiformat?
 <summary>
 Lösung
 </summary>
-`.md` ist die Dateiendung für Markdown-Dateien, die ein textbasiertes
-Dateiformat sind. Die Datei `README.md` kann in einem Texteditor
-geöffnet und bearbeitet werden. Details zur Markdown-Syntax werden
-später weiter unten diskutiert.
+
+> `.md` ist die Dateiendung für Markdown-Dateien, die ein textbasiertes
+> Dateiformat sind. Die Datei `README.md` kann in einem Texteditor
+> geöffnet und bearbeitet werden. Details zur Markdown-Syntax werden
+> später weiter unten diskutiert.
+
 </details>
 
 Im Folgenden werden einige häufig verwendete textbasierte Dateiformate
