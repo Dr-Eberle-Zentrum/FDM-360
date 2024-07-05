@@ -31,13 +31,7 @@ Dateiformat jedoch spezielle Strukturen oder Codierungen enthält, kann
 der Texteditor den Inhalt nicht korrekt interpretieren und anzeigen, was
 dann wie folgt aussieht.
 
-<figure>
-<img
-src="https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png"
-alt="" />
-<figcaption
-aria-hidden="true"><img src="https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png" width=300 title="Binärdatei in Texteditor geöffnet"></figcaption>
-</figure>
+[<img src="https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png" width=300 title="Binärdatei in Texteditor geöffnet">](https://www.nayuki.io/res/what-are-binary-and-text-files/binary-file-in-text-editor.png)
 
 > Über die Gründe wird ausführlich in [diesem
 > Artikel](https://www.nayuki.io/page/what-are-binary-and-text-files)
@@ -63,7 +57,7 @@ Textverarbeitungsprogramme sind keine reinen Texteditoren, da sie
 Formatierungen und spezielle Funktionen unterstützen. Diese sind daher
 ungeeignet um reine Textdateien zu erstellen oder zu bearbeiten.
 
-### Aufgabe
+### :hammer_and_wrench: Aufgabe
 
 Speichern sie die Datei [`README.md`](README.md) in einem beliebigen
 Ordner auf ihrem Computer. Öffnen sie die heruntergeladene Datei
